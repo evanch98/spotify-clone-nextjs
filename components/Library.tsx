@@ -20,6 +20,9 @@ const Library = () => {
           className="cursor-pointer text-neutral-400 hover:text-white transition"
         />
       </div>
+      <div className="flex flex-col gap-y-2 mt-4 px-3">
+        Lists of Songs!
+      </div>
     </div>
   );
 };
