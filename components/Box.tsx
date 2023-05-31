@@ -1,8 +1,14 @@
 "use client";
 
-const Box = () => {
+interface BoxProps {
+  children: React.ReactNode;
+}
+
+const Box: React.FC<BoxProps> = ({
+  children,
+}) => {
   return ( 
-    <div>Box</div>
+    <div>{children}</div>
   );
 }
 
