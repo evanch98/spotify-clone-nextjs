@@ -1,8 +1,14 @@
 "use client";
 
-const Button = () => {
+interface ButtonProps {
+  children: React.ReactNode;
+}
+
+const Button: React.FC<ButtonProps> = ({ children }) => {
   return ( 
-    <div></div>
+    <div>
+      {children}
+    </div>
   );
 }
 
