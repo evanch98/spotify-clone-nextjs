@@ -10,6 +10,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4">
             <ListItem 
               image="/images/liked.png"
+              name="Liked Songs"
+              href=""
             />
           </div>
         </div>
