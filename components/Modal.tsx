@@ -18,7 +18,9 @@ const Modal: React.FC<ModalProps> = ({
   description,
   children,
 }) => {
-  return <div>Modal Component</div>;
+  return (
+    <Dialog.Root></Dialog.Root>
+  );
 };
 
 export default Modal;
