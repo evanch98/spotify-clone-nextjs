@@ -1,7 +1,16 @@
+import Modal from "./Modal";
+
 const UploadModal = () => {
-  return ( 
-    <div>Upload Modal</div>
+  return (
+    <Modal
+      title="Upload modal title"
+      description="Upload modal description"
+      isOpen
+      onChange={() => {}}
+    >
+      Upload Modal
+    </Modal>
   );
-}
+};
 
 export default UploadModal;
