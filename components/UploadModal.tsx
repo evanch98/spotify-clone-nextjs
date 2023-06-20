@@ -26,6 +26,10 @@ const UploadModal = () => {
       uploadModal.onClose();
     }
   };
+
+  const onSubmit = () => {
+    // upload to supabase
+  };
   return (
     <Modal
       title="Add a song"
