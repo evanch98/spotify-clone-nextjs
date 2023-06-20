@@ -6,9 +6,11 @@ import Modal from "./Modal";
 const UploadModal = () => {
   const uploadModal = useUploadModal();
 
+  // to handle the close button
   const onChange = (open: boolean) => {
     if (!open) {
       // Reset the form
+      // close the uploadModal
       uploadModal.onClose();
     }
   }
