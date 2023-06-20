@@ -21,6 +21,7 @@ const UploadModal = () => {
   const onChange = (open: boolean) => {
     if (!open) {
       // Reset the form
+      reset();
       // close the uploadModal
       uploadModal.onClose();
     }
