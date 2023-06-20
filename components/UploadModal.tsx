@@ -2,7 +2,7 @@
 
 import useUploadModal from "@/hooks/useUploadModal";
 import Modal from "./Modal";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const UploadModal = () => {
   const uploadModal = useUploadModal();
@@ -27,7 +27,8 @@ const UploadModal = () => {
     }
   };
 
-  const onSubmit = () => {
+  // onSubmit will return a SubmitHandler with FieldValues
+  const onSubmit: SubmitHandler<FieldValues> = () => {
     // upload to supabase
   };
   return (
