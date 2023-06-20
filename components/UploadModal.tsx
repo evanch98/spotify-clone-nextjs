@@ -28,7 +28,7 @@ const UploadModal = () => {
   };
 
   // onSubmit will return a SubmitHandler with FieldValues
-  const onSubmit: SubmitHandler<FieldValues> = () => {
+  const onSubmit: SubmitHandler<FieldValues> = async (values) => {
     // upload to supabase
   };
   return (
@@ -38,7 +38,7 @@ const UploadModal = () => {
       isOpen={uploadModal.isOpen}
       onChange={onChange}
     >
-      Upload Modal
+      <form onSubmit={handleSubmit(onSubmit)}></form>
     </Modal>
   );
 };
