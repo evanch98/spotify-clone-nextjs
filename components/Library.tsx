@@ -11,13 +11,14 @@ const Library = () => {
   const uploadModal = useUploadModal();
   const { user } = useUser();
   const onClick = () => {
+    // if the user has not logged in, ask them to log in
     if (!user) {
       return authModal.onOpen();
     }
 
     // TODO: Check for subscription
 
-    // Handle opening upload modal
+    // show the uploadModal only if the user has already logged in
     return uploadModal.onOpen();
   };
   return (
