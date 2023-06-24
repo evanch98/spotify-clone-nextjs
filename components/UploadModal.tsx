@@ -103,9 +103,11 @@ const UploadModal = () => {
         return toast.error(supabaseError.message);
       }
 
-      router.refresh();
+      router.refresh(); // refresh the page
       setIsLoading(false);
       toast.success("Song created!");
+      reset(); // reset the entire form
+      uploadModal.onClose(); // close the modal
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
