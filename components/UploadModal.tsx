@@ -2,6 +2,7 @@
 
 import useUploadModal from "@/hooks/useUploadModal";
 import Modal from "./Modal";
+import Input from "./Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
 
