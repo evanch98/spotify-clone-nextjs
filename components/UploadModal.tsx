@@ -7,10 +7,13 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useState } from "react";
 import Button from "./Button";
 import { toast } from "react-hot-toast";
+import { useUser } from "@/hooks/useUser";
+import uniqid from "uniqid";
 
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const uploadModal = useUploadModal();
+  const { user } = useUser();
 
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     // default value for the form
@@ -37,6 +40,17 @@ const UploadModal = () => {
     // upload to supabase
     try {
       setIsLoading(true);
+
+      const imageFile = values.image?.[0];
+      const songFile = values.song?.[0];
+
+      // if one of these values is missing, toast an error
+      if (!imageFile || !songFile || !user) {
+        toast.error("Missing fields");
+        return;
+      }
+
+      const uniqueId = uniqid(); // create an unique id
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
