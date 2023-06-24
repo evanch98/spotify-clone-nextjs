@@ -54,6 +54,16 @@ const UploadModal = () => {
           {...register("author", { required: true })}
           placeholder="Song author"
         />
+        <div>
+          <div className="pb-1">Select a song file</div>
+          <Input
+            id="song"
+            type="file"
+            disabled={isLoading}
+            accept=".mp3"
+            {...register("song", { required: true })}
+          />
+        </div>
       </form>
     </Modal>
   );
