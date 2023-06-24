@@ -13,6 +13,7 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 # Key Features
 
 - Core Spotify features
+- Users can upload songs
 
 # Technologies used in this project
 <div>
