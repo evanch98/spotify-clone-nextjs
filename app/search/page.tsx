@@ -6,6 +6,7 @@ interface SearchProps {
   };
 }
 
+// for the Search Page
 const Search = async ({ searchParams }: SearchProps) => {
   const songs = await getSongsByTitle(searchParams.title); // fetch the songs from the server by the given title
 
