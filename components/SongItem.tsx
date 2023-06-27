@@ -24,6 +24,12 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
           alt="Cover Image"
         />
       </div>
+      <div className="flex flex-col items-center w-full p-4 gap-y-1">
+        <h1 className="font-semibold truncate w-full">{data.title}</h1>
+        <p className="text-neutral-400 text-sm pb-4 w-full truncate">
+          {data.author}
+        </p>
+      </div>
     </div>
   );
 };
