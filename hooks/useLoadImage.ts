@@ -1,7 +1,7 @@
 import { Song } from "@/types";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-// a hook for loading an image
+// a hook for retrieving the path of the image of the given song from the supabase storage
 const useLoadImage = (song: Song) => {
   const supabaseClient = useSupabaseClient();
 
@@ -10,7 +10,7 @@ const useLoadImage = (song: Song) => {
     return null;
   }
 
-  // fetch the image of the given path from the supabase storage bucket (images)
+  // fetch the url of the image of the given song from the supabase storage bucket (images)
   const { data: imageData } = supabaseClient.storage
     .from("images")
     .getPublicUrl(song.image_path);
