@@ -21,7 +21,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const userSongs = getSongsByUserId(); // fetch the songs uploaded by the current user
+  const userSongs = await getSongsByUserId(); // fetch the songs uploaded by the current user
   return (
     <html lang="en">
       <body className={font.className}>
