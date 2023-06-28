@@ -13,7 +13,7 @@ const SearchInput = () => {
 
   useEffect(() => {
     const query = { title: debouncedValue };
-    // construct a url (e.g. /search?title=debouncedValue)
+    // construct a url (e.g. /search?title=debouncedValue) and that value will be used to search songs
     const url = qs.stringifyUrl({
       url: "/search",
       query: query,
