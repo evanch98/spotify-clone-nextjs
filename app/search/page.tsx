@@ -10,6 +10,8 @@ interface SearchProps {
   };
 }
 
+export const revalidate = 0; // to make sure this page is not cached and the data on it will always be up to date
+
 // for the Search Page
 const Search = async ({ searchParams }: SearchProps) => {
   const songs = await getSongsByTitle(searchParams.title); // fetch the songs from the server by the given title
