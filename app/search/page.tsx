@@ -4,6 +4,7 @@ import SearchInput from "@/components/SearchInput";
 import SearchContent from "./components/SearchContent";
 
 interface SearchProps {
+  // will take the value of the title from the url
   searchParams: {
     title: string;
   };
