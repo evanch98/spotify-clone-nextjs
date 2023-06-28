@@ -13,7 +13,7 @@ const SearchInput = () => {
 
   useEffect(() => {
     const query = { title: debouncedValue };
-    // construct a url (e.g. /search/debouncedValue)
+    // construct a url (e.g. /search?title=debouncedValue)
     const url = qs.stringifyUrl({
       url: "/search",
       query: query,
