@@ -3,10 +3,10 @@
 import { Song } from "@/types";
 
 interface SearchContentProps {
-  songs: Song;
+  songs: Song[];
 }
 
-const SearchContent: React.FC<SearchContentProps> = ({songs}) => {
+const SearchContent: React.FC<SearchContentProps> = ({ songs }) => {
   return <div>Search Content</div>;
 };
 
