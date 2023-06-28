@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function useDebounce<T>(value: T, delay?: number): T {
   const [debounceValue, setDebounceValue] = useState<T>(value);
 
-  // will only get the result after 500 milliseconds (if the delayed is not specified) of user not typing
+  // will only get the result after 500 milliseconds (if the delay is not specified) of user not typing
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebounceValue(value);
