@@ -25,4 +25,5 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
   <img src="https://github.com/devicons/devicon/blob/master/icons/nextjs/nextjs-original-wordmark.svg" title="NextJS" alt="NextJS" width="40" height="40"/>&nbsp;
   <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" title="Tailwind" alt="Tailwind" width="40" height="40"/>&nbsp;
   <img src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" title="Supabase" alt="Supabase" width="40" height="40"/>&nbsp;
+  <img src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg" title="Stripe" alt="Stripe" width="40" height="40"/>&nbsp;
 </div>
