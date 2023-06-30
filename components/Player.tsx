@@ -15,7 +15,14 @@ const Player = () => {
   }
   return (
     <div className="fixed bottom-0 bg-black w-full py-2 h-[80px] px-4">
-      Player
+      {/* The reason to use key here is to ensure that the player component is destroyed before loading a new song */}
+      {/* The hook that is going to be used in this project does not support dynamic and modular url changes */}
+      {/* Therefore, we need the key attributes to reset the entire hook that is used in the PlayerContent */}
+      <PlayerContent 
+        key={songUrl}
+        song={song}
+        songUrl={songUrl}
+      />
     </div>
   );
 };
