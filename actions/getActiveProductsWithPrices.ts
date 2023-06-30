@@ -1,10 +1,10 @@
-import { Song } from "@/types";
+import { ProductWithPrice } from "@/types";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 
-// to fetch the songs from the server
-// the function will return the Promise<Song[]>
-const getActiveProductsWithPrices = async (): Promise<Song[]> => {
+// to fetch the products with prices from the server
+// the function will return the Promise<ProductWithPrice[]>
+const getActiveProductsWithPrices = async (): Promise<ProductWithPrice[]> => {
   // create the server component client
   const supabase = createServerComponentClient({
     cookies: cookies,
