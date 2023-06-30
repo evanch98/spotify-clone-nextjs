@@ -18,7 +18,7 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 - Users can like songs and see the list of liked songs
 - Users can search songs from the sever
 - Users can play and listen to songs uploaded by them or other users
-- Users can adjust the volume
+- Users can adjust the volume of the sound
 
 # Technologies used in this project
 <div>
