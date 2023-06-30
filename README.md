@@ -12,6 +12,7 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 
 # Key Features
 
+- Supabase and Stripe integrations
 - Users' data are stored on the Supabase
 - Users can logged with email or GitHub which is possible by the Supabase
 - Users can upload songs
