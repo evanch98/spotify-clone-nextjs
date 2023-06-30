@@ -12,12 +12,13 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 
 # Key Features
 
-- User's data are stored on Supabase
+- Users' data are stored on Supabase
 - Users can logged with email or GitHub
 - Users can upload songs
 - Users can like songs and see the list of liked songs
 - Users can search songs from the sever
 - Users can play and listen to songs uploaded by them or other users
+- Users can adjust the volume
 
 # Technologies used in this project
 <div>
