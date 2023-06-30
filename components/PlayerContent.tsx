@@ -150,7 +150,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
             className="cursor-pointer"
             size={34}
           />
-          <Slider />
+          <Slider value={volume} onChange={(value) => setVolume(value)} />
         </div>
       </div>
     </div>
