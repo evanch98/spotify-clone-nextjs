@@ -17,7 +17,7 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 - Users can logged with email or GitHub which is possible by the Supabase
 - Users can upload songs
 - Users can like songs and see the list of the liked songs
-- Users can search songs from the sever, and it will be displayed in realtime
+- Users can search songs from the sever, and the songs will be displayed in realtime
 - Users can play and listen to the songs uploaded by them or other users (can actually play the uploaded songs)
 - Users can adjust the volume of the sound and mute the sound
 - Users can buy the premium subscription which is made possible by the Stripe
