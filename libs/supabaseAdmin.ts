@@ -55,3 +55,45 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
 
   console.log(`Price inserted/updated: ${price.id}`);
 };
+
+const createOrRetrieveACustomer = async ({
+  email,
+  uuid,
+}: {
+  email: string;
+  uuid: string;
+}) => {
+  // try fetching the user with the given id
+  const { data, error } = await supabaseAdmin
+    .from("customers")
+    .select("stripe_customer_id")
+    .eq("id", uuid)
+    .single();
+
+  // if there is no user with the given id, create a new account
+  if (error || !data?.stripe_customer_id) {
+    const customerData: { metadata: { supabaseUUID: string }; email?: string } =
+      {
+        metadata: {
+          supabaseUUID: uuid,
+        },
+      };
+
+    if (email) customerData.email = email;
+
+    const customer = await stripe.customers.create(customerData);
+    const { error: supabaseError } = await supabaseAdmin
+      .from("customers")
+      .insert([{ id: uuid, stripe_customer_id: customer.id }]);
+
+    if (supabaseError) {
+      throw supabaseError;
+    }
+
+    console.log(`New customer created and inserted for ${uuid}`);
+    return customer.id;
+  }
+
+  // otherwise, return the id
+  return data.stripe_customer_id;
+};
