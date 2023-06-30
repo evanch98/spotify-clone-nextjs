@@ -14,6 +14,7 @@ const Player = () => {
   if (!song || !songUrl || !player.activeId) {
     return null;
   }
+  // if those values are present, open the player
   return (
     <div className="fixed bottom-0 bg-black w-full py-2 h-[80px] px-4">
       {/* The reason to use key here is to ensure that the player component is destroyed before loading a new song */}
