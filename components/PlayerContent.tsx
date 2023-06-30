@@ -7,6 +7,8 @@ import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import Slider from "./Slider";
+import usePlayer from "@/hooks/usePlayer";
+import { useState } from "react";
 
 interface PlayerContentProps {
   song: Song;
@@ -14,8 +16,33 @@ interface PlayerContentProps {
 }
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
-  const Icon = true ? BsPauseFill : BsPlayFill;
-  const VolumeIcon = true ? HiSpeakerXMark : HiSpeakerWave;
+  const player = usePlayer();
+  const [volume, setVolume] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(false);
+  // if isPlaying is true, show the pause icon; otherwise, show the play icon
+  const Icon = isPlaying ? BsPauseFill : BsPlayFill;
+  // if the volume is zero show the speaker icon with a x mark; otherwise, show the speaker icon with a wave
+  const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
+
+  // handle the next button's function
+  const onPlayNext = () => {
+    // if the length of the player.ids.length is 0, there is nothing to return
+    if (player.ids.length === 0) {
+      return;
+    }
+
+    // otherwise, get the index of the activeId
+    const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    // then, get the id of the song that is after the current song
+    const nextSong = player.ids[currentIndex + 1];
+
+    // if the current song is the last song of the playlist, play the first song of the playlist
+    if (!nextSong) {
+      return player.setId(player.ids[0]);
+    }
+
+    player.setId(nextSong); // set the song to be played (the song after the current song)
+  };
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 h-full">
       <div className="flex w-full justify-start">
@@ -47,7 +74,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
           <Icon size={30} className="text-black" />
         </div>
         <AiFillStepForward
-          onClick={() => {}}
+          onClick={onPlayNext}
           size={30}
           className="text-neutral-400 cursor-pointer hover:text-white transition"
         />
