@@ -6,6 +6,8 @@ import Button from "./Button";
 import { useState } from "react";
 import { useUser } from "@/hooks/useUser";
 import { toast } from "react-hot-toast";
+import { postData } from "@/libs/helpers";
+import { getStripe } from "@/libs/stripeClient";
 
 interface SubscribeModalProps {
   products: ProductWithPrice[];
@@ -35,6 +37,20 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({ products }) => {
       setPriceIdLoading(undefined);
       return toast("Already subscribed");
     }
+
+    try {
+      const { sessionId } = await postData({
+        url: "/api/create-checkout-session",
+        data: { price },
+      });
+
+      const stripe = await getStripe();
+      stripe?.redirectToCheckout({ sessionId });
+    } catch (error: any) {
+      toast.error((error as Error)?.message);
+    } finally {
+      setPriceIdLoading(undefined);
+    }
   };
   let content = <div className="text-center">No products available</div>;
 
@@ -60,6 +76,11 @@ const SubscribeModal: React.FC<SubscribeModalProps> = ({ products }) => {
       </div>
     );
   }
+
+  if (subscription) {
+    content = <div className="text-center">Already subscribed</div>;
+  }
+
   return (
     <Modal
       title="Only for premium users"
