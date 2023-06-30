@@ -9,6 +9,7 @@ const Player = () => {
   const { song } = useGetSongById(player.activeId);
   const songUrl = useLoadSong(song!);
 
+  // if any of these values are not available, do not open the Player
   if (!song || !songUrl || !player.activeId) {
     return null;
   }
