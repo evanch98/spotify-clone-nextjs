@@ -83,7 +83,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
       {/* Desktop View */}
       <div className="hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6">
         <AiFillStepBackward
-          onClick={() => {}}
+          onClick={onPlayPrevious}
           size={30}
           className="text-neutral-400 cursor-pointer hover:text-white transition"
         />
