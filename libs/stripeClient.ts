@@ -2,6 +2,7 @@ import { loadStripe, Stripe } from "@stripe/stripe-js";
 
 let stripePromise: Promise<Stripe | null>;
 
+// loading stripe
 export const getStripe = () => {
   if (!stripePromise) {
     stripePromise = loadStripe(
