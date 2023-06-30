@@ -43,6 +43,26 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 
     player.setId(nextSong); // set the song to be played (the song after the current song)
   };
+
+  // handle the back button's function
+  const onPlayPrevious = () => {
+    // if the length of the player.ids.length is 0, there is nothing to return
+    if (player.ids.length === 0) {
+      return;
+    }
+
+    // otherwise, get the index of the activeId
+    const currentIndex = player.ids.findIndex((id) => id === player.activeId);
+    // then, get the id of the song that is before the current song
+    const previousSong = player.ids[currentIndex - 1];
+
+    // if the current song is the first song of the playlist, play the last song of the playlist
+    if (!previousSong) {
+      return player.setId(player.ids[player.ids.length - 1]);
+    }
+
+    player.setId(previousSong); // set the song to be played (the song before the current song)
+  };
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 h-full">
       <div className="flex w-full justify-start">
