@@ -3,6 +3,7 @@
 import useGetSongById from "@/hooks/useGetSongById";
 import useLoadSong from "@/hooks/useLoadSong";
 import usePlayer from "@/hooks/usePlayer";
+import PlayerContent from "./PlayerContent";
 
 const Player = () => {
   const player = usePlayer();
