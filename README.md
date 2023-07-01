@@ -22,6 +22,7 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 - Users can adjust the volume of the sound and mute the sound
 - Users can buy the premium subscription which is made possible by the Stripe
 - Users can cancel the premium subscription
+- Restrict the user to perform some action if there is no premium subscription
 
 # Technologies used in this project
 <div>
