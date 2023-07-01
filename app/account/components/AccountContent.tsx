@@ -22,6 +22,7 @@ const AccountContent = () => {
     }
   }, [isLoading, user, router]);
 
+  // redirect the user to the customer portal to manage their subscription
   const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
@@ -44,6 +45,21 @@ const AccountContent = () => {
           <p>No active plan.</p>
           <Button onClick={subscribeModal.onOpen} className="w-[300px]">
             Subscribe
+          </Button>
+        </div>
+      )}
+      {subscription && (
+        <div className="flex flex-col gap-y-4">
+          <p>
+            You are currently on the{" "}
+            <b>{subscription?.prices?.products?.name}</b> plan.
+          </p>
+          <Button
+            onClick={redirectToCustomerPortal}
+            className="w-[300px]"
+            disabled={loading || isLoading}
+          >
+            Open customer portal
           </Button>
         </div>
       )}
