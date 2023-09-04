@@ -24,12 +24,32 @@ A Spotify clone web application built with TypeScript, React, Next.js, and Tailw
 - Users can cancel the premium subscription
 - Restrict the user from performing some actions if there is no premium subscription
 
-# Technologies used in this project
-<div>
-  <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" title="TypeScript" alt="TypeScript" width="40" height="40"/>&nbsp;
-  <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nextjs/nextjs-original-wordmark.svg" title="NextJS" alt="NextJS" width="40" height="40"/>&nbsp;
-  <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" title="Tailwind" alt="Tailwind" width="40" height="40"/>&nbsp;
-  <img src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg" title="Supabase" alt="Supabase" width="40" height="40"/>&nbsp;
-  <img src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg" title="Stripe" alt="Stripe" width="40" height="40"/>&nbsp;
-</div>
+# Testing the Project
+
+To test the project, download the zip file and open it in the editor of your choice.
+Then, run `npm install` in the terminal to install the dependencies.
+
+```bash
+npm install
+```
+
+After installing the required dependencies, you will have to create a `.env` file at the root of your project folder.
+The required environment variable is as follows.
+
+```text
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+```
+
+Follow the steps from the official documentation for [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/nextjs) and [Stripe](https://stripe.com/docs/development) to get the values for the environment variables.
+After completing the above steps, run `npm run dev` to test the project.
+
+```bash
+npm run dev
+```
+
+If you do not want to go through all the troubles, you can always test the [demo website](https://ecommerce-admin-nextjs-mu.vercel.app/) for this project.
